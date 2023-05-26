@@ -14,4 +14,5 @@ sudo git clone https://github.com/zsh-users/zsh-autosuggestions /usr/share/zsh/p
 
 # powerlevel10k
 sudo git clone --depth=1 https://github.com/romkatv/powerlevel10k.git /usr/share/zsh-theme-powerlevel10k
+zsh
 sudo cp ~/.p10k.zsh /usr/share/zsh/p10k.zsh

@@ -14,7 +14,7 @@ sudo apt update
 sudo apt dist-upgrade
 
 # Install utilities
-sudo apt -y install screenfetch nmap htop iotop nano vim git
+sudo apt -y install screenfetch nmap htop iotop nano vim git curl
 
 # Install basic C & C++ libraries and tools
 sudo apt -y install build-essential gdb valgrind
@@ -50,4 +50,14 @@ sudo chmod 770 -R /home/conda/miniconda3
 
 # Setup docker
 sudo apt update
+sudo apt-get install ca-certificates curl gnupg
+sudo install -m 0755 -d /etc/apt/keyrings
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+sudo chmod a+r /etc/apt/keyrings/docker.gpg
+echo \
+  "deb [arch="$(dpkg --print-architecture)" signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
+  "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | \
+sudo tee /etc/apt/sources.list.d/docker.list > /dev/null	
 sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo cp ./permissions /etc/sudoers.d/permissions
