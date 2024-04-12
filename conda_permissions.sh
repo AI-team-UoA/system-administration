@@ -1,0 +1,1 @@
+sudo chgrp condagroup /home/conda/miniconda3/pkgs/cache/*

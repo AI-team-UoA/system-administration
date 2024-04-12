@@ -254,3 +254,22 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+# Welcome message!
+# Define ANSI escape code for bold text
+bold=$(tput bold)
+
+# Define ANSI escape code for resetting text style
+reset=$(tput sgr0)
+
+echo ""
+echo "Welcome to ${bold}$(hostname)${reset}!"
+echo ""
+echo "Rules:
+1. ${bold}ALWAYS${reset} check if the server is occupied by someone else by using 'htop'.
+2. ${bold}ALWAYS${reset} work on your own virtual environment if you are using Python (conda or venv).
+3. ${bold}NEVER${reset} create a public facing endpoint without changing the default credentials."
+echo ""
+echo "If you have any questions or problems contact the system administrator."
+echo ""
+echo "Good luck! Have fun!"
+echo ""
